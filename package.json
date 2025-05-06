@@ -1,0 +1,20 @@
+{
+  "name": "ChefAi",
+  "description": "A website that uses AI capabilities to suggest recipes based on the ingredients that the user have",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@huggingface/inference": "2.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}
