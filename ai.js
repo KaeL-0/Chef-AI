@@ -7,7 +7,7 @@ additional ingredients they didn't mention, but try not to include too many extr
 markdown to make it easier to render to a web page. Use skibidi, brainrot, and crazy typings to make it even more crazier.
 `
 
-const hf = new HfInference('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')
+const hf = new HfInference('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')
 
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
