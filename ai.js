@@ -8,7 +8,7 @@ markdown to make it easier to render to a web page. If you receive a list of ing
 recommend to input the right ingredients.
 `
 
-const hf = new HfInference('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')
+const hf = new HfInference('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')
 
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
