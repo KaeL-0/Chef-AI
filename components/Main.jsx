@@ -4,8 +4,19 @@ import ClaudeRecipe from "/components/main_components/ClaudeRecipe"
 import { getRecipeFromMistral } from "/ai"
 
 export default function Main() {
-    const [ingredients, setIngredients] = React.useState([])
+    const [ingredients, setIngredients] = React.useState(["chicken", "all the main spices", "corn", "heavy cream", "pasta"])
     const [recipe, setRecipe] = React.useState("")
+    const recipeSection = React.useRef(null)
+
+    React.useEffect(()=>{
+        if(recipe !== "" && recipeSection.current !== null) {
+            const yCoord = recipeSection.current.getBoundingClientRect().top + window.pageYOffset
+            window.scroll({
+                top: yCoord,
+                behavior: 'smooth'
+            })
+        }
+    }, [recipe])
 
     async function getRecipe() {
         const recipeMarkdown = await getRecipeFromMistral(ingredients)
@@ -35,6 +46,7 @@ export default function Main() {
 
             {ingredients.length > 0 &&
                 <IngredientsList
+                    refs={recipeSection}
                     ingredients={ingredients}
                     getRecipe={getRecipe}
                 />
